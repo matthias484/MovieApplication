@@ -48,7 +48,17 @@
                 android:value="androidx.startup" />
         </provider>
 
-
+        <receiver
+            android:directBootAware="false"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.DUMP"
+            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+            >
+            <intent-filter>
+                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
